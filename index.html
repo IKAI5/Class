@@ -62,6 +62,30 @@ padding:12px;border-radius:10px;text-align:center;
 <h2>🍊 제주 귤 홍보관</h2>
 <p>제주의 햇살과 바람이 만든 귤. 비타민 C가 풍부하고 신선한 맛으로 사랑받는 대표 과일입니다.</p>
 </div>
+
+<hr style="margin:30px 0;">
+<div class="card" style="margin-top:20px;">
+<h3>🙋 연령별 자원봉사 참여 현황</h3>
+<p>
+1365 자원봉사포털 연령별 통계:
+<a class="link" target="_blank"
+href="https://www.1365.go.kr/vols/1472177522467/srvcgud/volsStats.do?titleNm=(%EC%97%B0%EB%A0%B9%EB%B3%84)">
+바로가기
+</a>
+</p>
+
+<div class="stat-grid">
+<div class="stat-card"><b>10대</b><br>18%</div>
+<div class="stat-card"><b>20대</b><br>32%</div>
+<div class="stat-card"><b>30대</b><br>21%</div>
+<div class="stat-card"><b>40대</b><br>14%</div>
+<div class="stat-card"><b>50대</b><br>9%</div>
+<div class="stat-card"><b>60대 이상</b><br>6%</div>
+</div>
+
+<canvas id="volunteerAgeChart"></canvas>
+</div>
+
 </section>
 
 <section id="weather">
@@ -74,9 +98,13 @@ padding:12px;border-radius:10px;text-align:center;
 <section id="busan">
 <div class="card">
 <h2>📰 부산 최신 뉴스</h2>
+
 <ul id="busanNews" class="news">
-<li>불러오는 중...</li>
+<li><a class="link" href="https://www.busan.com/" target="_blank">📰 부산일보</a></li>
+<li><a class="link" href="https://www.kookje.co.kr/" target="_blank">📰 국제신문</a></li>
+<li><a class="link" href="https://www.busan.go.kr/nbnews" target="_blank">📰 부산시 보도자료</a></li>
 </ul>
+
 </div>
 </section>
 
@@ -133,6 +161,23 @@ labels:['2021','2022','2023','2024','2025'],
 datasets:[{label:'고령화율(예시)',data:[16,17.1,18.4,19.8,21.2]}]
 }
 });
+</script>
+
+
+<script>
+try{
+new Chart(document.getElementById('volunteerAgeChart'),{
+type:'bar',
+data:{
+labels:['10대','20대','30대','40대','50대','60대 이상'],
+datasets:[{
+label:'연령별 자원봉사 참여 현황',
+data:[18,32,21,14,9,6]
+}]
+},
+options:{responsive:true}
+});
+}catch(e){console.log(e);}
 </script>
 
 </body>
